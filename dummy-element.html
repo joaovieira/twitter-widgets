@@ -1,0 +1,28 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../twitter-widgets/twitter-widgets.html">
+
+<dom-module id="dummy-element">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <twitter-widgets>
+      <a class="twitter-timeline" height="500" href="https://twitter.com/joaomgvieira">Tweets by joaomgvieira</a>
+    </twitter-widgets>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'dummy-element'
+
+    });
+  </script>
+
+</dom-module>

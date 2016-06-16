@@ -1,0 +1,82 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`twitter-widgets` is a simple wrapper for Twitter's embedded widgets (https://dev.twitter.com/web).
+
+When using the native Shadow DOM, Twitter's library can't access widget's anchors within
+your app component's local DOM.
+
+This element loads Twitter's _widgets.js_ library asynchronously (https://dev.twitter.com/web/javascript/loading)
+and tells it to look for widgets within its local DOM.
+
+Example:
+
+    <twitter-widgets>
+      <a class="twitter-timeline" href="https://twitter.com/joaomgvieira">Tweets by joaomgvieira</a>
+    </twitter-widgets>
+
+Within `twitter-widgets` use the widget's anchor data attributes and classes as you would normally would.
+
+Example:
+
+    <twitter-widgets>
+      <a class="twitter-timeline"
+         height="500"
+         data-tweet-limit="5"
+         data-chrome="nofooter transparent"
+         href="https://twitter.com/joaomgvieira">
+       Tweets by joaomgvieira
+     </a>
+    </twitter-widgets>
+
+** Note: `twitter-widgets` loads Twitter's widgets.js so you don't have to. Since it checks if the library
+has already been loaded, it's safe to use this element multiple times on the same app/page.
+For more information, see https://dev.twitter.com/web/javascript.
+-->
+
+<dom-module id="twitter-widgets">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <content></content>
+
+  </template>
+
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
+
+  <script>
+    Polymer({
+
+      is: 'twitter-widgets',
+
+      ready: function () {
+        twttr.ready(function () {
+          twttr.widgets.load(this);
+        }.bind(this));
+      }
+
+    });
+  </script>
+
+</dom-module>

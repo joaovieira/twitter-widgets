@@ -1,6 +1,10 @@
 # \<twitter-widgets\>
 
-Simple Polymer wrapper to load Twitter embed widgets on a local DOM.
+#### Simple Polymer wrapper to load Twitter embed widgets on a local DOM.
+
+`bower install --save joaovieira/twitter-widgets`
+
+----
 
 `twitter-widgets` is a simple wrapper for Twitter's embedded widgets (https://dev.twitter.com/web).
 

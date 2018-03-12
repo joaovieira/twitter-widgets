@@ -1,4 +1,4 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer/polymer-element.html">
 
 <!--
 `twitter-widgets` is a simple wrapper for Twitter's embedded widgets (https://dev.twitter.com/web).
@@ -44,7 +44,7 @@ For more information, see https://dev.twitter.com/web/javascript.
       }
     </style>
 
-    <content></content>
+    <slot></slot>
 
   </template>
 
@@ -66,17 +66,15 @@ For more information, see https://dev.twitter.com/web/javascript.
   }(document, "script", "twitter-wjs"));</script>
 
   <script>
-    Polymer({
-
-      is: 'twitter-widgets',
-
-      ready: function () {
-        twttr.ready(function () {
-          twttr.widgets.load(this);
-        }.bind(this));
+     class TwitterWidgets extends Polymer.Element {
+      static get is() { return 'twitter-widgets'; }
+      
+      ready() {
+        twttr.ready(() => twttr.widgets.load(this));
       }
+    }
 
-    });
+    window.customElements.define(TwitterWidgets.is, TwitterWidgets);
   </script>
 
 </dom-module>

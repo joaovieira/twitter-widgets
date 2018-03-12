@@ -1,5 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../twitter-widgets/twitter-widgets.html">
+<link rel="import" href="twitter-widgets.html">
 
 <dom-module id="dummy-element">
 
@@ -18,11 +18,11 @@
   </template>
 
   <script>
-    Polymer({
-
-      is: 'dummy-element'
-
-    });
+    class DummyElement extends Polymer.Element {
+      static get is() { return 'dummy-element'; }
+    }
+ 
+    window.customElements.define(DummyElement.is, DummyElement);
   </script>
 
 </dom-module>

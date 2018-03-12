@@ -1,17 +1,12 @@
 <!doctype html>
-
-<html>
+<html lang="en">
   <head>
-    <title>twitter-widgets test</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-    <script>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-      // setup Polymer options
-      window.Polymer = {lazyRegister: true, dom: 'shadow'};
+    <title>twitter-widgets test</title>
 
-    </script>
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
     <link rel="import" href="../twitter-widgets.html">
@@ -34,23 +29,20 @@
     </test-fixture>
 
     <script>
-      suite('twitter-widgets', function() {
-
-        test('instantiating the element works', function() {
-          let element = fixture('basic');
-          assert.equal(element.is, 'twitter-widgets');
-        });
+      suite('twitter-widgets', () => {
 
         test('renders timeline on light DOM', function () {
-          let element = fixture('basic');
-          assert.equal(element.querySelectorAll('.twitter-timeline').length, 1);
+          const element = fixture('basic');
+          assert.isNotNull(element.querySelector('.twitter-timeline'));
         });
 
         test('renders timeline on shadow DOM', function () {
-          let element = fixture('shadow');
-          assert.equal(element.root.querySelectorAll('.twitter-timeline').length, 1);
+          const element = fixture('shadow');
+          assert.isNotNull(element.shadowRoot.querySelectorAll('.twitter-timeline'));
         });
+
       });
     </script>
+
   </body>
 </html>

@@ -8,7 +8,7 @@ First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polyme
 $ polymer serve
 ```
 
-Open the reusable element link (e.g. http://localhost:8080/components/twitter-widgets/).
+Open the reusable element link (e.g. http://localhost:8081/components/twitter-widgets/).
 
 ## Running Tests
 

@@ -1,6 +1,5 @@
 {
   "name": "twitter-widgets",
-  "version": "0.0.1",
   "description": "Simple Polymer wrapper to load Twitter embed widgets on a local DOM.",
   "main": "twitter-widgets.html",
   "authors": [
@@ -15,12 +14,11 @@
     "widgets"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^2.5.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.1.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.5.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.1.0"
   }
 }

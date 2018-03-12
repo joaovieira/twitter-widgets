@@ -20,7 +20,7 @@ Example:
       <a class="twitter-timeline" href="https://twitter.com/joaomgvieira">Tweets by joaomgvieira</a>
     </twitter-widgets>
 
-Within `twitter-widgets` use the widget's anchor data attributes and classes as you would normally would.
+Within `twitter-widgets` use the widget's anchor data attributes and classes as you would normally.
 
 Example:
 
